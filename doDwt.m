@@ -26,9 +26,9 @@ function [ result ] = doDwt( sourceImage, transformLevels )
         for y=1:transformHeight
             for x=1:transformWidth
                result(y, x) = a(y,x);
-               result(y, x + transformWidth) = h(y, x);
-               result(y + transformHeight, x) = v(y, x);
-               result(y + transformHeight, x + transformWidth) = d(y, x);
+               result(y, x + transformWidth) = h(y, x) + 128;
+               result(y + transformHeight, x) = v(y, x) + 128;
+               result(y + transformHeight, x + transformWidth) = d(y, x) + 128;
             end
         end
     end
